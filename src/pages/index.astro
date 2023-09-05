@@ -1,11 +1,22 @@
 ---
+import { Image } from "astro:assets";
+import Container from "../components/Container.astro";
 import Layout from "../layouts/Layout.astro";
+import KaceroLogo from "../assets/kacero-logo.jpg";
+import MainBody from "../components/MainBody.astro";
+import CardList from "../components/CardList.astro";
+import Testimonial from "../components/Testimonial.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<h1>hola mundo</h1>
+<Layout
+	title="Inicio"
+	description="Página de tienda de instrumentos músicales, guitarras, cursos, blog y más"
+>
+	<Container>
+		<MainBody />
+	</Container>
+	<Testimonial />
+	<CardList listTitle="Mejores vendidos" />
 </Layout>
 
-<style>
-
-</style>
+<style></style>

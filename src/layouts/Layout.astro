@@ -1,10 +1,13 @@
 ---
+import Header from "../components/Header.astro";
 import "@fontsource/lato";
+import Footer from "../components/Footer.astro";
 interface Props {
 	title: string;
+	description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
@@ -15,12 +18,22 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>GuitarLA - {title}</title>
+		<meta name="description" content={description} />
 	</head>
 	<body>
+		<Header />
 		<slot />
+		<Footer />
 	</body>
 </html>
+<script
+	type="module"
+	src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+></script>
+<script
+	nomodule
+	src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <style is:global>
 	*,
 	*::after,
@@ -31,4 +44,13 @@ const { title } = Astro.props;
 	body {
 		font-family: "lato", sans-serif;
 	}
+	
+	.btn {
+		@apply rounded-full py-2 px-3 uppercase text-xs font-bold cursor-pointer tracking-wider;
+	}
+
+	.hoverGray{
+		@apply hover:text-gray-400 duration-200
+	}
+
 </style>

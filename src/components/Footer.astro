@@ -1,0 +1,35 @@
+---
+import Container from "./Container.astro";
+---
+
+<footer class="w-full h-auto bg-gradient-to-r from-black via-gray-800 to-gray-700 pt-5 border-t-[0.5px]">
+    <div class="w-[80%] md:w-full h-full max-w-[1200px] flex flex-col md:flex-row items-center justify-between mx-auto gap-5">
+        <ul class="self-start flex flex-col gap-4 h-full text-white">
+            <li><a href="/" class="nav hoverGray">Inicio</a></li>
+            <li><a href="/" class="nav hoverGray">Nosotros</a></li>
+            <li><a href="/" class="nav hoverGray">Productos</a></li>
+            <li><a href="/" class="nav hoverGray">Contacto</a></li>
+        </ul>
+        <div class="self-start flex flex-col h-full gap-4 max-w-xs">
+            <h3 class="text-white font-semibold">Sigue conectado</h3>
+            <ul class="flex flex-col h-full text-gray-300 gap-4">
+                <li><a href="/" class="nav hoverGray text-gray-300">Facebook</a></li>
+                <li><a href="/" class="nav hoverGray text-gray-300">Instagram</a></li>
+            </ul>
+        </div>
+        <div class="self-start flex flex-col h-full gap-4">
+            <h3 class="text-white font-semibold">Oficina/Depósito</h3>
+            <a href="#" class="text-white hoverGray"
+                >Calle Gabriel de Áviles, Zona Alalay,<br /> Cochabamba, Bolivia</a
+            >
+        </div>
+        <div class="self-start flex flex-col h-full gap-4 max-w-xs">
+            <h3 class="text-white font-semibold">Whatsapp</h3>
+            <a href="#" class="text-white hoverGray">+591 67462981</a>
+        </div>
+    </div>
+    <div class="w-[100%] mt-5 md:w-full h-auto flex flex-col items-center justify-center text-sm py-4 mx-auto">
+        <p class="text-gray-400 font-light m-0 p-0 text-center"><span class="font-semibold">Kacero Importadora y distribuidora</span> - 2023 Todos los derechos reservados.</p>
+        <p class="text-gray-400 font-light m-0 p-0">Desarollado por: <a href="#">Eynar Alvarez</a></p>
+    </div>
+</footer>
