@@ -1,0 +1,63 @@
+---
+import { Image } from "astro:assets";
+import Container from "./Container.astro";
+
+import logo from "../assets/kacero-logo.jpg";
+---
+<header class="flex items-center h-[60px] bg-gradient-to-r from-black via-gray-800 to-gray-700 shadow-lg">
+    <Container>
+        <a href="/" class="z-10">
+            <Image src={logo} alt="Kacero logo image" class="w-16" />
+        </a>
+        <div
+            class="z-0 nav_links duration-300 md:static absolute md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5"
+        >
+            <ul
+                class="flex md:flex-row flex-col md:items-center md:gap-16 gap-12"
+            >
+                <li><a href="/" class="nav">Inicio</a></li>
+                <li><a href="about" class="nav">Nosotros</a></li>
+                <li><a href="products" class="nav">Productos</a></li>
+                <li><a href="/" class="nav">Contacto</a></li>
+            </ul>
+        </div>
+        <div class="flex items-center gap-6 z-10">
+            <a
+                href="#"
+                class="bg-[#0495cc] text-white font-bold uppercase px-5 py-2 rounded-xl hover:bg-[#025d7f] duration-300"
+            >
+                Contactanos
+            </a>
+            <div class="md:hidden">
+                <ion-icon
+                    name="menu"
+                    class="text-3xl cursor-pointer text-white"
+                    onclick="onToggleMenu(this)"></ion-icon>
+            </div>
+        </div>
+    </Container>
+</header>
+<script is:inline>
+const navLinks = document.querySelector(".nav_links");
+function onToggleMenu(e) {
+    e.name = e.name === "menu" ? "close" : "menu";
+    if (e.name == "close") {
+        navLinks.classList.remove("top-[-100%]");
+        navLinks.classList.add("top-[9%]");
+    } else {
+        navLinks.classList.add("top-[-100%]");
+        navLinks.classList.remove("top-[9%]");
+    }
+}
+</script>
+<style>
+    .nav {
+        @apply relative text-white font-bold hover:text-gray-300 duration-300;
+    }
+    .nav::after {
+        @apply content-[''] bg-gray-300 h-[3px] w-[0%] left-0 -bottom-[5px] rounded-xl absolute duration-300;
+    }
+    .nav:hover::after {
+        @apply w-[100%];
+    }
+</style>
