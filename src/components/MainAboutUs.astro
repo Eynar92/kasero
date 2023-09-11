@@ -1,0 +1,21 @@
+---
+import { Image } from "astro:assets";
+import AboutUsImage from "../assets/bobinaInox.png";
+import Button from "./Button.astro";
+---
+
+<section
+    class="max-w-[1200px] w-full bg-gradient-to-r py-10 flex flex-col md:flex-row justify-center mx-auto px-5 md:px-0 gap-10"
+>
+    <div class="md:flex-1">
+        <Image src={AboutUsImage} alt="About us image" />
+    </div>
+    <div class="flex flex-col gap-5 md:gap-10 md:flex-1">
+        <h2 class="font-bold text-3xl md:text-3xl text-gray-800">Nosotros</h2>
+        <h3 class="font-bold text-4xl md:text-5xl text-blue-950">Quiénes Somos</h3>
+        <p class="text-lg text-gray-800">
+            Somos una distribuidora de productos en acero inoxidable cuyo propósito es abastecer a grandes y medianas empresas de la industria alimenticia láctea, citrícola, cervecera, bodeguera, frigorífica, química, petroquímica, de la construcción, etc.
+        </p>
+        <Button buttonTitle="Contáctanos" />
+    </div>
+</section>
