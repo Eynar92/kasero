@@ -1,5 +1,6 @@
 ---
-
+import KaceroMap from "./KaceroMap";
+import { MapContainer, TileLayer } from "react-leaflet";
 ---
 
 <section
@@ -7,6 +8,8 @@
 >
     <div class="max-w-[1200px] flex flex-col gap-10">
         <h2 class="font-bold text-3xl md:text-3xl">Nos Ubicamos en</h2>
-        <div id="my_map" class="h-[400px] w-[600px] bg-indigo-400"></div>
+        <div id="my_map" class="h-[400px] w-screen max-w-[1200px]">
+            <KaceroMap client:only="react" />
+        </div>
     </div>
 </section>
