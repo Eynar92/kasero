@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+import ProductImage from "../assets/bobinaInox.png";
+interface Props {
+    description: string;
+}
+
+const { description } = Astro.props;
+---
+
+<div
+    class="flex flex-col justify-between h-auto w-72 p-6 gap-3 rounded-2xl shadow-2xl border-2 bg-white"
+>
+    <h3 class="text-xl font-bold max-w-sm self-center">{description}</h3>
+
+    <div class="w-40 self-center">
+        <Image src={ProductImage} alt="Product Image" />
+    </div>
+    <div class="flex flex-col gap-1">
+        <span
+            class="text-white self-start px-3 py-1 text-xs bg-black rounded-lg"
+        >
+            Envío Gratuito
+        </span>
+        <!-- <h3 class="text-xl max-w-sm">{description}</h3> -->
+        <!-- <ul class="text-sm font-light text-gray-400">
+            <li>Espesor: 3mm</li>
+            <li>Ancho: 1.2m</li>
+        </ul> -->
+    </div>
+    <button
+        class="w-full bg-blue-700 text-white font-semibold rounded-lg py-1 uppercase hover:bg-blue-900 duration-300"
+    >
+        Cotizar
+    </button>
+</div>

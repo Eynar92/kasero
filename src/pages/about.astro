@@ -1,18 +1,74 @@
 ---
+import { Image } from "astro:assets";
 import Container from "../components/Container.astro";
 import Layout from "../layouts/Layout.astro";
+import BannerAbout from "../assets/banner-aboutUs.jpg";
+import ProductList from "../components/ProductList.astro";
 ---
 
-<Layout title="About us page" description="Aquí viene la descripción">
+<Layout title="Nosotros" description="Aquí viene la descripción">
     <main class="h-[calc(100vh-60px)]">
-        <Container>
-            <h1 class="md:text-5xl text-3xl text-gray-800">
-                Juventud y experiencia, la combinación para un servicio de
-                excelencia
-            </h1>
-            <p>
-                Nuestra misión es brindar “excelencia” tanto en los productos como en el servicio que ofrecemos, para seguir creciendo día a día y ser líderes en el mercado.
-            </p>
-        </Container>
+        <section class="flex mx-auto relative items-center h-full">
+            <div class="absolute h-full -z-10">
+                <Image
+                    class="bg-no-repeat object-cover h-[calc(100vh-60px)]"
+                    src={BannerAbout}
+                    alt="Banner about us image"
+                />
+            </div>
+            <Container>
+                <div
+                    class="max-w-[70%] flex flex-col place-content-center gap-10 h-full"
+                >
+                    <h1 class="md:text-5xl text-3xl text-white font-black">
+                        Juventud y experiencia, la combinación para un <span
+                            class="uppercase text-blue-950">servicio</span
+                        >
+                         de excelencia
+                    </h1>
+                    <p class="text-lg text-gray-100">
+                        Nuestra misión es brindar “excelencia” tanto en los
+                        productos como en el servicio que ofrecemos, para seguir
+                        creciendo día a día y ser líderes en el mercado.
+                    </p>
+                </div>
+            </Container>
+        </section>
     </main>
+    <section class="h-auto my-10">
+        <Container>
+            <div class="flex flex-col md:flex-row gap-10">
+                <div class="flex flex-col gap-10 flex-1">
+                    <h1 class="md:text-5xl text-3xl text-gray-800 font-black">
+                        Nuestra Historia
+                    </h1>
+                    <p class="text-lg text-gray-800">
+                        Bedini SPA nace en Milán Italia, en 1950 iniciádonos
+                        como trafilería de barras de Aceros Inoxidables. En
+                        pocos años nos convertimos en uno de los principales
+                        proveedores de Europa. En 1980 nos establecemos en la
+                        Argentina para abastecer a grandes y medianas empresas
+                        de la industria alimenticia láctea, citrícola,
+                        cervecera, bodeguera, frigorífica, química,
+                        petroquímica, de la construcción, etc. Nuestra línea de
+                        productos en Aceros Inoxidables incluye: caños redondos
+                        y estructurales, chapas, accesorios para soldar y
+                        roscar, válvulas, barras y planchuelas. Nuestra misión
+                        es brindar “excelencia” tanto en los productos como en
+                        el servicio que ofrecemos. La calidad de nuestros
+                        productos, un servicio ágil y profesional, y precios muy
+                        competitivos, nos permiten ser hoy proveedores de las
+                        principales industrias argentinas. Nos enorgullecería
+                        poder acercarnos a usted para ponernos a su servicio y
+                        ofrecerles todas nuestras ventajas competitivas.
+                    </p>
+                </div>
+                <Image
+                    class="w-full md:max-w-[40%] bg-no-repeat object-cover"
+                    src={BannerAbout}
+                    alt="Banner about us image"
+                />
+            </div>
+        </Container>
+    </section>
 </Layout>
