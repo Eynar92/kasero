@@ -1,0 +1,37 @@
+---
+import { productsData } from "../data/productsData";
+import ProductCard from "./ProductCard.astro";
+---
+
+<div class="container my-10 flex flex-col gap-10">
+    <h1 class="md:text-5xl text-3xl text-gray-800 font-black">Productos</h1>
+    <div class="product-cards flex flex-col gap-10">
+        {
+            productsData.map((producto) => (
+                <div class="product-card flex flex-col gap-5">
+                    <h2 class="md:text-3xl text-xl text-gray-800 font-black">
+                        {producto.nombre}
+                    </h2>
+                    <ul>
+                        {producto.materiales.map((material) => (
+                            <li class="flex flex-col gap-5">
+                                <h3 class="md:text-xl text-xl text-gray-800 font-black">
+                                    {material.material}
+                                </h3>
+                                <ul class="flex gap-10 flex-wrap">
+                                    {material.opciones.map((opcion) => (
+                                        <li>
+                                            <ProductCard
+                                                description={opcion.descripcion}
+                                            />
+                                        </li>
+                                    ))}
+                                </ul>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            ))
+        }
+    </div>
+</div>

@@ -1,12 +1,11 @@
 ---
+import Container from "../components/Container.astro";
+import ProductList from "../components/ProductList.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Products page" description="Aquí viene la descripción">
-    <h1>Mis servicios</h1>
-    <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, fugit
-        id. Quisquam praesentium, fugit corporis quos dolores, est dicta
-        suscipit commodi odio debitis error! Amet corporis nostrum quis ipsa ut.
-    </p>
+<Layout title="Productos" description="Aquí viene la descripción">
+    <Container>
+        <ProductList />
+    </Container>
 </Layout>
